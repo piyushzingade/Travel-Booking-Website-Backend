@@ -1,5 +1,7 @@
+
 import mongoose from 'mongoose';
 
+// Define the schema
 const travelPackageSchema = new mongoose.Schema({
   destination: String,
   price: Number,
@@ -10,6 +12,5 @@ const travelPackageSchema = new mongoose.Schema({
   imageUrl: String,
 });
 
-const TravelPackage = mongoose.model('TravelPackage', travelPackageSchema);
-
-export default TravelPackage;
+// Export the schema (named export)
+export { travelPackageSchema };
