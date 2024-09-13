@@ -59,33 +59,6 @@ npm install body-parser cors express dotenv mongoose paasport passport-local pas
   PORT = 3002
 ```
 
-## Tailwind CSS Setup
-### Initialize it using the following command:
-```bash
-
-npm install -D tailwindcss postcss autoprefixer
-npx tailwindcss init -p
-
-// main.css 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-
-// tailwind.config.js
-module.exports = {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,jsx,ts,tsx}", // Adjust paths as needed
-  ],
-  darkMode: 'class', // Enable class-based dark mode
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-};
-
-```
 
 ## Running project 
 ### To run the development server:
