@@ -1,8 +1,8 @@
-import dotenv from 'dotenv'; // Load environment variables
+import dotenv from 'dotenv';
 import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
-import { TravelPackageModel } from './model/TravelPackageModel.js'; // Use '.js' extension
+import TravelPackage from './model/TravelPackageModel.js'; // Import the default export
 
 dotenv.config(); // Initialize dotenv to load .env variables
 
@@ -15,7 +15,7 @@ app.use(cors());
 // API route to fetch all travel packages
 app.get('/allPackages', async (req, res) => {
   try {
-    const allPackages = await TravelPackageModel.find({});
+    const allPackages = await TravelPackage.find({});
     res.json(allPackages);
   } catch (error) {
     console.error("Error fetching packages:", error);
