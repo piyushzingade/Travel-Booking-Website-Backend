@@ -50,6 +50,14 @@ npm install axios react-router-dom react-hot-toast reduxjs/toolkit  react-redux 
 ```bash
 npm install body-parser cors express dotenv mongoose paasport passport-local password-mongoose 
 ```
+## Create a .env file in the server directory and add the following:
+
+#env
+
+```
+  MONGO_URL= MY-MONGO_URL
+  PORT = 3002
+```
 
 ## Tailwind CSS Setup
 ### Initialize it using the following command:
@@ -80,9 +88,9 @@ module.exports = {
 ```
 
 ## Running project 
-### To run the development client and server:
+### To run the development server:
 ```bash
-cd client or cd server
+cd server
 npm run dev
 ```
 
