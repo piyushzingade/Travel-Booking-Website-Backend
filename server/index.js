@@ -2,7 +2,7 @@ import dotenv from 'dotenv'; // Load environment variables
 import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
-import { TravelPackageModel } from './model/TravelPackageModel.js'; // Make sure to add '.js' for ESM import
+import { TravelPackageModel } from './model/TravelPackageModel.js'; // Use '.js' extension
 
 dotenv.config(); // Initialize dotenv to load .env variables
 
@@ -15,16 +15,21 @@ app.use(cors());
 // API route to fetch all travel packages
 app.get('/allPackages', async (req, res) => {
   try {
-    let allPackages = await TravelPackageModel.find({});
+    const allPackages = await TravelPackageModel.find({});
     res.json(allPackages);
-  } catch (err) {
+  } catch (error) {
+    console.error("Error fetching packages:", error);
     res.status(500).send("Error fetching packages");
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`App started on port ${PORT}`); // Log statement
-  mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(() => console.log("DB connected"))
-    .catch((err) => console.error("DB connection error:", err));
-});
+mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => {
+    console.log("DB connected");
+    app.listen(PORT, () => {
+      console.log(`App started on port ${PORT}`); // Log statement
+    });
+  })
+  .catch((error) => {
+    console.error("DB connection error:", error);
+  });
