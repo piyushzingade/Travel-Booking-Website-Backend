@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const travelPackageSchema = new mongoose.Schema({
   destination: String,
@@ -12,4 +12,4 @@ const travelPackageSchema = new mongoose.Schema({
 
 const TravelPackage = mongoose.model('TravelPackage', travelPackageSchema);
 
-module.exports = TravelPackage;
+export default TravelPackage;

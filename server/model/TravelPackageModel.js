@@ -1,7 +1,6 @@
-const { model} = require("mongoose");
+import { model } from 'mongoose';
+import { TravelPackageSchema } from '../schemas/TravelPackageSchema.js';
 
-const { TravelPackageSchema } = require("../schemas/TravelPackageSchema")
+const TravelPackageModel = model('TravelPackage', TravelPackageSchema);
 
-const TravelPackageModel = new model("TravelPackage" , TravelPackageSchema)
-
-module.exports = {TravelPackageModel} ; 
+export { TravelPackageModel };
