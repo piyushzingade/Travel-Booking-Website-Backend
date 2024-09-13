@@ -1,6 +1,7 @@
-import { model } from 'mongoose';
-import { TravelPackageSchema } from '../schemas/TravelPackageSchema.js';
 
-const TravelPackageModel = model('TravelPackage', TravelPackageSchema);
+import mongoose from 'mongoose';
+import { travelPackageSchema } from '../schemas/TravelPackageSchema.js'; // Import the schema
 
-export { TravelPackageModel };
+const TravelPackage = mongoose.model('TravelPackage', travelPackageSchema); // Create the model
+
+export default TravelPackage; // Export the model as the default export
